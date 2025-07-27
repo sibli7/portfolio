@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Full-Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: #343F4F;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 2rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .hero {
+            padding: 4rem 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+        }
+	       /* Modern Color Scheme */
+        :root {
+            --primary: #3b82f6;  /* Blue-500 */
+            --primary-dark: #2563eb; /* Blue-600 */
+            --dark: #1e293b;     /* Slate-800 */
+            --light: #f8fafc;    /* Slate-50 */
+            --gray: #94a3b8;    /* Slate-400 */
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* About Section Styles */
+        #about {
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        /* Photo Section */
+        .photo-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .profile-photo {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 2;
+            border: 8px solid white;
+        }
+        
+        .photo-backdrop {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            border-radius: 1rem;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+        
+        .photo-container:hover .profile-photo {
+            transform: translate(-10px, -10px);
+        }
+        
+        /* Content Section */
+        .about-content {
+            position: relative;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        
+        .section-title span {
+            color: var(--primary);
+        }
+        
+        .about-text {
+            color: var(--dark);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .highlight-box {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .skill-item {
+            background: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-container {
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-container {
+                max-width: 300px;
+                margin-bottom: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        section {
+            padding: 4rem 0;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .skill-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .project-img {
+            height: 200px;
+            background: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        .project-info {
+            padding: 1.5rem;
+        }
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .social-links {
+            margin: 1rem 0;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+.wrapper {
+            display: flex;
+            align-items: center;
+		justify-content:center;
+        }
+        
+        .static-txt {
+            color: red;
+            font-size: 3rem;
+            font-weight: 400;
+        }
+        
+        .dynamic-txts {
+            margin-left: 15px;
+            height: 4rem;
+            line-height: 4rem;
+            overflow: hidden;
+        }
+        
+        .dynamic-txts li {
+            list-style: none;
+            font-size: 58px;
+            font-weight: 600;
+            color: #3b82f6;
+            position: relative;
+            top: 0;
+            animation: slide 12s steps(4) infinite;
+        }
+        
+        .dynamic-txts li span {
+            position: relative;
+        }
+        
+        .dynamic-txts li span::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #343F4F;
+            border-left: 2px solid #3b82f6;
+            animation: typing 3s infinite, blink 0.5s infinite;
+        }
+        
+        @keyframes typing {
+            40%, 60% {
+                left: calc(100% + 30px);
+            }
+            100% {
+                left: 0;
+            }
+        }
+        
+        @keyframes blink {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #3b82f6;
+            }
+        }
+        
+        @keyframes slide {
+            100% {
+                top: -16rem;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"></div>
+                <ul>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hero">
+                <div class="wrapper">
+    <div class="static-txt">Hi, I'm a</div>
+    <ul class="dynamic-txts">
+      <li><span>Web Developer</span></li>
+	<li><span>Web Designer</span></li>
+    </ul>
+  </div>
+                <p>Full-Stack Developer specializing in Python, Java, and JavaScript frameworks. I build efficient, scalable web applications with clean code.</p>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </header>
+
+<!-- Add this AFTER your header/banner and BEFORE the "Technical Skills" section -->
+<section id="about">
+        <div class="container">
+            <div class="about-container">
+                <!-- Photo Section -->
+                <div class="photo-container">
+                    <div class="photo-backdrop"></div>
+                    <img src="C:/Users/City Computer And IT/OneDrive/Desktop/PortfolioPage/sibli.jpg" 
+                         alt="sibli" 
+                         class="profile-photo">
+                </div>
+                
+                <!-- Content Section -->
+                <div class="about-content">
+                    <span class="section-tag">FULL-STACK DEVELOPER</span>
+                    <h1 class="section-title">Hi, I'm <span>[Your Name]</span></h1>
+                    
+                    <div class="highlight-box">
+                        <p class="about-text">
+                            I specialize in building modern web applications using Python, Java, and JavaScript. 
+                            With expertise across the full stack, I create efficient, scalable solutions that 
+                            deliver exceptional user experiences.
+                        </p>
+                    </div>
+                    
+                   
+                    
+                    <h3>Technical Skills</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">Spring Boot</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Express</span>
+                        <span class="skill-item">jQuery</span>
+                        <span class="skill-item">REST APIs</span>
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">Git</span>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/sibli7" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/sibli-hossain-b6367b356/" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                       
+                        <a target="_blank" href="mailto:siblihossain7@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>JavaScript (ES6+)</li>
+                        <li>jQuery</li>
+                        <li>HTML5/CSS3</li>
+                        <li>Next js</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Python/Django</li>
+                        <li>Java/Spring Boot</li>
+                        <li>Node.js/Express</li>
+                        <li>RESTful APIs</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Databases</h3>
+                    <ul>
+                        <li>Git/GitHub</li>
+                        <li>PostgreSQL/MySQL</li>
+                        <li>MongoDB</li>
+                        <li>Docker Basics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('C:/Users/City Computer And IT/OneDrive/Desktop/PortfolioPage/Django_Token_Auth.jpeg');"></div>
+                    <div class="project-info">
+                        <h3>Django Token Authentication</h3>
+                        <p>Secure user login system using token-based authentication</p>
+                        <p><strong>Tech:</strong> Django, HTML5, CSS3, JavaScript, Mysql</P>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('C:/Users/City Computer And IT/OneDrive/Desktop/PortfolioPage/object_detection.jpeg');"></div>
+                    <div class="project-info">
+                        <h3>Object Detection & Identification(Python)</h3>
+                        <p>Real-time system for detecting and classifying objects using computer vision</p>
+                        <p><strong>Tech:</strong> Python, TensorFlow, NumPy</p>
+
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('C:/Users/City Computer And IT/OneDrive/Desktop/PortfolioPage/spring_Email_Verification.jpeg');"></div>
+                    <div class="project-info">
+                        <h3>SpringBoot Email Verification</h3>
+			<p>User registration system with email confirmation using SpringBoot</p>
+                        <p><strong>Tech:</strong> Spring Boot,HTML5,CSS3,Mysql</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+
+		<div class="project-card">
+                    <div class="project-img" style="background-image: url('C:/Users/City Computer And IT/OneDrive/Desktop/PortfolioPage/DRF_JWT.png');"></div>
+                    <div class="project-info">
+                        <h3>DRF JWT Authentication</h3>
+			<p>Secure API authentication system using JSON Web Tokens in Django REST Framework</p>
+			<p><strong>Tech:</strong> Django REST Framework, JWT, Python, PostgreSQL</p>
+
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+
+		<div class="project-card">
+                    <div class="project-img" style="background-image: url('C:/Users/City Computer And IT/OneDrive/Desktop/PortfolioPage/NEWS_BLOG.png');"></div>
+                    <div class="project-info">
+                        <h3>News Blog Application (PHP)</h3>
+			<p>Dynamic web application for publishing, editing, and managing news articles</p>
+			<p><strong>Tech:</strong> PHP, MySQL, HTML5, CSS3</p>
+
+
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('C:/Users/City Computer And IT/OneDrive/Desktop/PortfolioPage/django_CRUD.jpeg');"></div>
+                    <div class="project-info">
+                        <h3>Django CRUD Application</h3>
+			<p>Web application for creating, reading, updating, and deleting records using Django framework</p>
+			<p><strong>Tech:</strong> Django, Python, HTML5, CSS3, MySQL</p>
+
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <form>
+                <div style="display: grid; gap: 1rem; max-width: 600px; margin: 0 auto;">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2023 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
